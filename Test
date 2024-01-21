@@ -1,0 +1,79 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("GASTER HUB")
+
+
+local KillingCheats = PhantomForcesWindow:NewSection("Main")
+
+
+KillingCheats:CreateButton("Teleport to retro button", function() 
+game.ReplicatedStorage.Assets.Retro.Parent = game.Workspace
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801, 4907)
+
+
+end)
+
+
+KillingCheats:CreateButton("tp to final room", function() 
+
+local player = game.Players.LocalPlayer
+local character = player.Character
+
+if character then
+    local root = character:FindFirstChild("HumanoidRootPart")
+    
+    if root then
+        local desiredCFrame = CFrame.new(499.860291, 77.2709045, 60.5982056, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        root.CFrame = desiredCFrame
+    end
+end
+
+end)
+
+KillingCheats:CreateButton("Anti afk", function() 
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.IgnoreGuiInset = true
+screenGui.Parent = playerGui
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+frame.Position = UDim2.new(0.25, 0, 0.25, 0)
+frame.BackgroundColor3 = Color3.fromRGB(0, 20, 40)
+frame.Active = true -- Enable interaction
+frame.Draggable = true -- Allow dragging
+frame.Parent = screenGui
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.BackgroundTransparency = 1
+textLabel.Font = Enum.Font.GothamMedium
+textLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
+textLabel.Text = "Dark, darker yet darker"
+textLabel.TextSize = 28
+textLabel.Parent = frame
+
+local bb = game:GetService('VirtualUser')
+game:GetService('Players').LocalPlayer.Idled:Connect(function()
+    bb:CaptureController()
+    bb:ClickButton2(Vector2.new())
+end)
+
+end)
+
+KillingCheats:CreateButton("《yt》credits to", function() 
+
+print("Gaster")
+
+end)
+
+KillingCheats:CreateButton("THEDARKNESSKEEPSGROWING", function() 
+
+print("Gaster")
+
+end)
